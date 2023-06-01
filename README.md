@@ -4,6 +4,8 @@ This repository contains the template for building onboarding informations for t
 
 # Prerequisites
 
+Collect this information and transfer it for each environment:
+
 1) Create an private git repository on github.
 2) Prepare the following information for onboarding request: 
     - Environment Repository (all private to hide uploaders identity) (DEV, UAT, PROD)
@@ -18,6 +20,12 @@ This repository contains the template for building onboarding informations for t
 3) After verification the content will be took over for your country
 4) The bot creates a PR
 
+# GPG Keys
+
+Follow the [instructions] to create a key(https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key).
+
+Algorithm RSA or EC.
+Minimum Keylength 4096 bit (RSA) or 256 bit (EC)
 
 # Domains
 
