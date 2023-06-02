@@ -13,16 +13,18 @@ Collect this information and transfer it for each environment:
     - Invite WHO Bot User to Repository (with read rights).
     - Create GPG Keys for responsible persons for each Environment (for tagging)
 3) Fill in content for your country
+
 # Procedure
 
 1) The Repo will be onboarded + the GPG keys
-2) The Bot user clones the latest tag of your private repo and verifies the signature of the tag against the onboarded GPG keys
-3) After verification the content will be took over for your country
-4) The bot creates a PR
+2) Tag the version of your latest informations by using [git tag + signing](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work) commands either from terminal or developer IDE. Please Note that an update in github web desktop itself is not working, because the platform will use an intermediate key.
+3) The Bot user clones the latest tag of your private repo and verifies the signature of the tag against the onboarded GPG keys
+4) After verification the content will be took over for your country
+5) The bot creates a PR
 
 # GPG Keys
 
-Follow the [instructions] to create a key(https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key).
+Follow the [instructions](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) to create a key.
 
 Algorithm RSA or EC.
 Minimum Keylength 4096 bit (RSA) or 256 bit (EC)
