@@ -13,6 +13,7 @@ Collect this information and transfer it for each environment:
     - Invite WHO Bot User to Repository (with read rights).
     - Create GPG Keys for responsible persons for each Environment (for tagging)
 3) Fill in content for your country
+4) Send an onboarding/participation request to tng-support@who.int
 
 # Procedure
 
