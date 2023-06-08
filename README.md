@@ -39,3 +39,4 @@ Available Domains:
 - DDCC
 - DIVOC
 - ICAO
+- SHC
