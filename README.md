@@ -17,7 +17,14 @@ Collect this information and transfer it for each environment:
 
 # Procedure
 
-1) The Repo will be onboarded + the Public GPG keys (export it by using gpg --amor --export XXXXXXXXXX)
+1) The Repo will be onboarded + the Public GPG keys. Export it by using: 
+```
+gpg --amor --export [key-id]
+```
+Keys can be listed by:
+```
+gpg -k
+```
 2) Tag the version of your latest informations by using [git tag + signing](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work) commands either from terminal or developer IDE. Please Note that an update in github web desktop itself is not working, because the platform will use an intermediate key.
 3) The Bot user clones the latest tag of your private repo and verifies the signature of the tag against the onboarded GPG keys
 4) After verification the content will be took over for your country
