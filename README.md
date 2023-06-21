@@ -10,7 +10,7 @@ Collect this information and transfer it for each environment:
 2) Prepare the following information for onboarding request: 
     - Environment Repository (all private to hide uploaders identity) (DEV, UAT, PROD)
     - Repository URL
-    - Invite WHO Bot User to Repository (with read rights).
+    - Invite WHO Bot User to Repository (with read rights). The Bot User is: [tng-bot](https://github.com/tng-bot) for production and [tng-bot-dev](https://github.com/tng-bot-dev) for development and acceptance environments.
     - Create GPG Keys for responsible persons for each Environment (for tagging)
 3) Fill in content for your country
 
