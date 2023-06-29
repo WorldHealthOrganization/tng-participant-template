@@ -1,5 +1,0 @@
-If you wanna pin an JWKS issuer, add the JWKS URL followed by optionally a hash seperatd by ; or a \new
-
-
-https://my.test/.well-known-configuration/test.jwks;2333bcdeb3bcbcb233
-https://..

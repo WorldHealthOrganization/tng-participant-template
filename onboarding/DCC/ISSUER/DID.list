@@ -1,5 +1,0 @@
-Update the list with trusted DIDs followed by \n If you wanna pin the HASH of the DID document, add it with ; 
-
-did:web:xyz;2a3444aebcfeabcbcbce23333
-did:sov:xyz
-
