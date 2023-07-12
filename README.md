@@ -8,10 +8,10 @@ Collect this information and transfer it for each environment:
 
 1) Create an private git repository on github.
 2) Prepare the following information for onboarding request: 
-    - Environment Repository (all private to hide uploaders identity) (DEV, UAT, PROD)
+    - Environment Repository (all private to hide uploader's identity) (DEV, UAT, PROD)
     - Repository URL
     - Invite WHO Bot User to Repository (with read rights). The Bot User is: [tng-bot](https://github.com/tng-bot) for production and [tng-bot-dev](https://github.com/tng-bot-dev) for development and acceptance environments.
-    - Create GPG Keys for responsible persons for each Environment (for tagging)
+    - Create GPG Keys for responsible persons for each environment (for tagging)
 3) Fill in content for your country
 4) Send an onboarding/participation request to tng-support@who.int
 
@@ -27,7 +27,7 @@ gpg -k
 ```
 2) Tag the version of your latest informations by using [git tag + signing](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work) commands either from terminal or developer IDE. Please Note that an update in github web desktop itself is not working, because the platform will use an intermediate key.
 3) The Bot user clones the latest tag of your private repo and verifies the signature of the tag against the onboarded GPG keys
-4) After verification the content will be took over for your country
+4) After verification the content will be taken over for your country
 5) The bot creates a PR
 
 # GPG Keys
