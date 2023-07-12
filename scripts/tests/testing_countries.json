@@ -1,0 +1,37 @@
+{
+    "__doc__" : [
+        "Some tests require a lookup between a country's 2-character code and its",
+        "3-character code. When non-existing countries are used in testing, these",
+        "would fail.",
+        "The following list defines virtual testing countries which can be used",
+        "to issue testing certificates and should not interfere with any real world",
+        "country."
+    ],
+
+    "countries" : [
+        {   "alpha_2":"XA", 
+            "alpha_3":"XXA", 
+            "common_name":"Test XA",
+            "flag":"­🥳", 
+            "name":"Test XA", 
+            "numeric":"991", 
+            "official_name":"Test Country A"
+        },
+        {   "alpha_2":"XB", 
+            "alpha_3":"XXB", 
+            "common_name":"Test XB",
+            "flag":"­🙃", 
+            "name":"Test XB", 
+            "numeric":"992", 
+            "official_name":"Test Country B"
+        },
+        {   "alpha_2":"XX", 
+            "alpha_3":"XXX", 
+            "common_name":"Test XX",
+            "flag":"­😄", 
+            "name":"Test XX", 
+            "numeric":"999", 
+            "official_name":"Test Country X"
+        }
+    ]
+}
