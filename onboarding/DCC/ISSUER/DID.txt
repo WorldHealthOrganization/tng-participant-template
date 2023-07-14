@@ -1,1 +1,0 @@
-Add trusted DID here. Add multiple of this files to add more.
