@@ -20,4 +20,4 @@ def test_country_flag(cert, pytestconfig):
         country = pycountry.countries.lookup(country_attributes[0].value)
 
     # Check 3: Country in path must match country of C attribute
-    assert cert.pathinfo.get('country') == country.alpha_3
+    assert cert.pathinfo.get('country') == country.alpha_3, f"{cert.pathinfo.get('country')} != {country.alpha_3}"
