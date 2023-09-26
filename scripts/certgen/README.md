@@ -4,7 +4,19 @@ Following [Certificate Preperation](https://worldhealthorganization.github.io/sm
 
 Disclaimer: The script generates self-signed certificates and is not intended to be used for production environments.
 
-You may use environment variables to set the certificate parameters (see gen_all_certs script for details).
+You must update the defaults using environment variables adapt the certificate parameters according to your country etc.
+
+Example with default values:
+
+```
+export OSSL_COUNTRY_NAME="XA"
+export OSSL_STATE_NAME="Test State"
+export OSSL_LOCALITY_NAME="Geneva"
+export OSSL_ORGANIZATION_NAME="WHO"
+export OSSL_ORGANIZATIONAL_UNIT_NAME="R&D"
+```
+
+Then execute the script:
 
 ```
 cd scripts/certgen
