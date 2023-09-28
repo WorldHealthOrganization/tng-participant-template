@@ -7,10 +7,10 @@ DAYS_TLS=365
 DAYS_UPLOAD=365
 
 # configure the DN
-export OSSL_COUNTRY_NAME="XA"
-export OSSL_STATE_NAME="Test State"
-export OSSL_LOCALITY_NAME="Geneva"
-export OSSL_ORGANIZATION_NAME="WHO"
+export OSSL_COUNTRY_NAME="XL"
+export OSSL_STATE_NAME="MT"
+export OSSL_LOCALITY_NAME="SANTIAGO"
+export OSSL_ORGANIZATION_NAME="CREATE"
 export OSSL_ORGANIZATIONAL_UNIT_NAME="R&D"
 #export OSSL_COMMON_NAME="WHO International" # default entry of the corresponding config file will be used
 
