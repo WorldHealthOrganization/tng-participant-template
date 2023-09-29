@@ -17,7 +17,9 @@ export OSSL_ORGANIZATIONAL_UNIT_NAME="R&D"
 # generate a new directory for each run
 subdir=$(date +%Y%m%d%H%M%S)
 mkdir -p ${subdir}
-# generate the certificates and keys for the CA, TLS, and upload
-openssl req -x509 -new -days ${DAYS_CA} -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout ${subdir}/CAprivkey.key -nodes -out ${subdir}/CAcert.pem -config sca.conf
-openssl req -x509 -new -days ${DAYS_TLS} -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout ${subdir}/TNP_TLS.key -nodes -out ${subdir}/TNP_TLS.pem -config TLSClient.conf
-openssl req -x509 -new -days ${DAYS_UPLOAD} -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout ${subdir}/TNP_UP.key -nodes -out ${subdir}/TNP_UP.pem -config uploadCert.conf
+# generate the certificates and keys for the SCA, TLS, and upload
+openssl req -x509 -new -days ${DAYS_CA} -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout ${subdir}/SCA.key -nodes -out ${subdir}/SCA.pem -config sca.conf
+openssl req -x509 -new -days ${DAYS_TLS} -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout ${subdir}/TLS.key -nodes -out ${subdir}/TLS.pem -config TLSClient.conf
+openssl req -x509 -new -days ${DAYS_UPLOAD} -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout ${subdir}/UP.key -nodes -out ${subdir}/UP.pem -config uploadCert.conf
+#special case to only place CA.pem file for self-signed TLS cert as a copy
+cat ${subdir}/TLS.pem > ${subdir}/CA.pem

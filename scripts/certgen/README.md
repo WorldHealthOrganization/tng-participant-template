@@ -24,7 +24,7 @@ cd scripts/certgen
 Note: keep your private keys safe and secure. Do not share them with anyone. 
 
 Copy the generated certificates to the respective folders and change the file names to match the naming convention.
-If using self-signed TLS certificates, you may copy it also as CA.pem (check to have keyCertSign in the keyUsage).
+For the case of self-signed TLS certificates, the CA.pem is just a copy of the TLS.pem (check to have keyCertSign in the keyUsage).
 The CA.pem should exist, since it is used to verify the TLS client certificate when connecting to the TNG application.
 
 # Tagging for taking into use
