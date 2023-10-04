@@ -1,0 +1,10 @@
+{
+  "name": "Ministry of Health",
+  "url": "did:web:example.com",
+  "urlType": "DID",
+  "hash": "sha-256 of the DID document 2",
+  "sslPublicKeys": [
+    "TLS public key of the DID document host",
+    "TLS public key of the DID document host to support key rotation"
+  ]
+}
