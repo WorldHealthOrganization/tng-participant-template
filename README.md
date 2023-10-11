@@ -48,3 +48,8 @@ Available Domains:
 - DIVOC
 - ICAO
 - SHC
+
+# Trusted Issuer
+
+To onboard [Trusted Issuer](onboarding/DDCC/ISSUER/trusted-issuer-onboarding-specification.md), provide input via the subfolder ISSUER.
+
