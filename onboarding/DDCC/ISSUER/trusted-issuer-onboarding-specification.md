@@ -6,7 +6,7 @@ For the onboarding a JSON structure is used.
 
 ## JSON structure specification
 
-The JSON structure is defined as follows named `trusted-issuer.json`:
+The JSON structure is defined as follows named `Trusted-Issuer.json`:
 
 ```json
 {
