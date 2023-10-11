@@ -21,7 +21,7 @@ The JSON structure is defined as follows named `Trusted-Issuer.json`:
 }
 ```
 
-Multiple files can be provided by adding a numbered suffix like `trusted-issuer_1.json`, `trusted-issuer_2.json`.
+Multiple files can be provided by adding a numbered suffix like `Trusted-Issuer_1.json`, `Trusted-Issuer_2.json`.
 
 
 | Field         | Optional | Type   | constraints          | Description                                                                                                                                                 |
