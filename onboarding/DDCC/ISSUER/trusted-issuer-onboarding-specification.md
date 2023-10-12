@@ -17,7 +17,8 @@ The JSON structure is defined as follows named `Trusted-Issuer.json`:
   "sslPublicKeys": [
     "MIIGwjCCBaqgAwIBAvd3QuY29tMEkGCCsG....Lz3lGqBrHBklHq7x5WK4dAipTLrG39u",
     "MIIGwjCCBaqgAwIBAvd3QuY29tMEkGCCsG....Lz3lGqBrHBklHq7x5WK4dAipTLrG40u"
-  ]
+  ],
+  "country" : "DE"
 }
 ```
 
@@ -31,5 +32,6 @@ Multiple files can be provided by adding a numbered suffix like `Trusted-Issuer_
 | urlType       | No       | String | 25 chars             | DID                                                                                                                                                         |
 | hash          | No       | String | 64 chars             | SHA256 Hash of the content behind it (if applicable)                                                                                                        |
 | sslPublicKeys | No       | String | 2048 chars per entry | SSL Certificates of the endpoint hosting the DID document. Additional entry may be used to support key rotation. (Format: Base64 of the DER representation) |
+| country       | No       | String | ISO 3166-1 alpha-2   | The alpha 2 country code of the participant                                                                                                                 |
 
 The JSON structure will be signed by the trust anchor and onboarded to the gateway.
