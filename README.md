@@ -12,7 +12,9 @@ Collect this information and transfer it for each environment:
     - Repository URL
     - Invite WHO Bot User to Repository (with read rights). The Bot User is: [tng-bot](https://github.com/tng-bot) for production and [tng-bot-dev](https://github.com/tng-bot-dev) for development and acceptance environments.
     - Create GPG Keys for responsible persons for each environment (for tagging)
-3) Fill in content for your country
+3) Fill in content for your country:
+   - for DEV and UAT environments you may use the conf files and the [certgen bash script](scripts/certgen/gen_all_certs.sh) as a guideline
+
 4) Send an onboarding/participation request to tng-support@who.int
 
 # Procedure
