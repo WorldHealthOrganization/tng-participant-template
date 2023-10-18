@@ -17,6 +17,13 @@ Collect this information and transfer it for each environment:
 
 4) Send an onboarding/participation request to tng-support@who.int
 
+# GPG Keys
+
+Follow the [instructions](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) to create a key.
+
+Algorithm RSA or EC.
+Minimum Keylength 4096 bit (RSA) or 256 bit (EC)
+
 # Procedure
 
 1) The Repo will be onboarded + the Public GPG keys. Export it by using: 
@@ -32,12 +39,6 @@ gpg -k
 4) After verification the content will be taken over for your country
 5) The bot creates a PR
 
-# GPG Keys
-
-Follow the [instructions](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) to create a key.
-
-Algorithm RSA or EC.
-Minimum Keylength 4096 bit (RSA) or 256 bit (EC)
 
 # Domains
 
