@@ -34,3 +34,9 @@ curl --location 'https://tng-dev.who.int/trustedCertificate' \
 --data '{"cms": "'"${payload}"'", "properties": {}, "domain": "'"${domain}"'"}' \
 --key ${subdir}/TLS.key \
 --cert ${subdir}/TLS.pem \
+
+#cleanup
+rm ${dsc_dir}/DSC.der
+rm ${dsc_dir}/DSC_cms.der
+rm ${dsc_dir}/DSC_cms.b64
+
