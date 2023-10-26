@@ -1,11 +1,11 @@
 #!/bin/zsh
 
 if [ $# -ne 1 ]; then
-    echo "Usage: $0 <subdir> (which must exist)"
+    echo "Usage: $0 <template.cnf> <subdir> (where <subdir> must contain SCA.pem and SCA.key)"
     exit 1
 fi
-subdir=$1
-
+subdir=$2
+source $1
 DAYS_DSC=730
 
 #openssl req -newkey ec:<(openssl ecparam -name prime256v1) -keyout ${subdir}/DSC.key -nodes -out ${subdir}/DSC_csr.pem -config DSC.conf  # this does only work on Linux/MacOS
