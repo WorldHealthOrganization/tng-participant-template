@@ -29,9 +29,15 @@ git push --tags
 ```
 
 # Generate DSCs  
-After onboarding you probably want to upload your DSCs.
+After onboarding you probably want to generate and upload your DSCs.
 DSC Genration can be performed with the [gen_dsc.sh](gen_dsc.sh) script.
 For execution replace \<SUBDIR\> with the path where your SCA.key and SCA.pem reside.
+Optionally the purpose of the DSC can be provided with the third parameter. When this is omitted,
+then the DSCs will be suitable for test, vaccination and recovery.
 ```
-gen_dsc.sh template.cnf <SUBDIR>
+gen_dsc.sh template.cnf <SUBDIR> [test|vax|rec]
 ```
+# Upload DSCs
+For uploading DSCs they must be packend into an CMS and be signed with the Upload Certificate of their issuer.
+The resulting output must be base64 encoded and put in the payload of a POST request to the TNG.
+A script [upload_dsc.sh](upload_dsc.sh) performs these tasks and may be tailored to your needs.
