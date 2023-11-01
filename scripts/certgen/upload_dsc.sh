@@ -13,7 +13,7 @@ if ! [ -d "$2" ]; then
     exit 1
 fi
 if [ -z $3 ]; then
-    echo "No domain specified: using DDCC"
+    echo "No domain specified: using DCC" #TODO: change to DDCC when accepted by TNG
     domain=DCC
 else
     domain=$3
@@ -24,7 +24,7 @@ dsc_dir=$2
 
 openssl x509 -outform der -in ${dsc_dir}/DSC.pem -out ${dsc_dir}/DSC.der
 openssl cms -sign -nodetach -in ${dsc_dir}/DSC.der -signer ${subdir}/UP.pem -inkey ${subdir}/UP.key -out ${dsc_dir}/DSC_cms.der -outform DER -binary
-openssl enc -base64 -in ${dsc_dir}/DSC_cms.der -e -a -A > ${dsc_dir}/DSC_cms.b64
+openssl enc -base64 -in ${dsc_dir}/DSC_cms.der -e -A > ${dsc_dir}/DSC_cms.b64
 #openssl x509 -in ${subdir}/DSC.pem -noout -fingerprint -sha256 | sed 's/://g' 
 payload=$(cat ${dsc_dir}/DSC_cms.b64)
 
