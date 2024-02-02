@@ -28,7 +28,7 @@ Minimum Keylength 4096 bit (RSA) or 256 bit (EC)
 
 1) The Repo will be onboarded + the Public GPG keys. Export it by using: 
 ```
-gpg --amor --export [key-id]
+gpg --armor --export [key-id]
 ```
 Keys can be listed by:
 ```
