@@ -1,5 +1,6 @@
-from common import requires_readable_cert
+from common import requires_readable_cert, warn_in_sync_mode
 
+@warn_in_sync_mode
 @requires_readable_cert
 def test_key_usages(cert):
     """Check if the certificates have the required keyUsage flags 
