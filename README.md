@@ -44,13 +44,16 @@ gpg -k
 
 For further domains, add a new folder under onboarding and copy the DCC folder structure.
 
-Available Domains: 
+Available Domains:
 
 - DCC
 - DDCC
 - DIVOC
 - ICAO
 - SHC
+- CRED
+- RACSEL-DDVC
+- IPS
 
 # Trusted Issuer
 
