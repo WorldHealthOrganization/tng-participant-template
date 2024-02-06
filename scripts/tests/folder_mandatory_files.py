@@ -9,7 +9,7 @@ def test_folder_mandatory_files(country_folder):
 
     # Testing folder structure
     for domain in ofiles.keys():
-        assert domain in ('DCC','DDCC','DIVOC','ICAO','SHC'), 'Invalid domain: '+domain
+        assert domain in ('DCC','DDCC','DIVOC','ICAO','SHC','CRED','RACSEL-DDVC','IPS'), 'Invalid domain: '+domain
 
         assert ('TLS', 'TLS.pem') in ofiles[domain], f'TLS cert is missing in domain {domain}'
         assert ('TLS', 'CA.pem') in ofiles[domain], f'TLS/CA cert is missing in domain {domain}'
