@@ -1,0 +1,8 @@
+# Configuration Template for Certificate Generation
+# Modify for your own needs
+
+export OSSL_COUNTRY_NAME="XA"
+export OSSL_STATE_NAME="Test State"
+export OSSL_LOCALITY_NAME="Geneva"
+export OSSL_ORGANIZATION_NAME="WHO"
+export OSSL_ORGANIZATIONAL_UNIT_NAME="R&D"
