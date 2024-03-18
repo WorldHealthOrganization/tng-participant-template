@@ -1,8 +1,9 @@
-from common import requires_readable_cert
+from common import requires_readable_cert, warn_in_sync_mode
 from cryptography.x509 import ObjectIdentifier as OID
 from cryptography import x509
 
 @requires_readable_cert
+@warn_in_sync_mode
 def test_signature_algorithm(cert):
     'Algorithm must be in allowed list'
     assert isinstance(cert.x509, x509.Certificate)
