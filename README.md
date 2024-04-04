@@ -40,11 +40,9 @@ gpg -k
 5) The bot creates a PR
 
 
-# Domains
+# Trust Domains
 
-For further domains, add a new folder under onboarding and copy the DCC folder structure.
-
-Available Domains:
+Supported Domains:
 
 - DCC
 - DDCC
@@ -54,6 +52,15 @@ Available Domains:
 - CRED
 - RACSEL-DDVC
 - IPS
+
+## Adding a new trust domain
+
+New trust domains can be established only in agreement between the requesting party and WHO.
+Collaborate with the WHO's secretariat to gather comprehensive insights and feedback for the development of the new trust domain.
+
+Once the new trust domain is established create new subdirectory in 'onboarding' subdir that reflect the agreed domain name.
+If you are already onboarded for a domain (e.g. DCC, RACSEL-DDVC etc.) you only need to generate a new SCA for the the newly added domain.
+If the newly added domain is the first one for this participant, UPLOAD, TLS and SCA must be generated.
 
 # Trusted Issuer
 
