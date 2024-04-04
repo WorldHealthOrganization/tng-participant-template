@@ -1,11 +1,2 @@
 {
-  "name": "Ministry of Health",
-  "url": "did:web:example.com",
-  "urlType": "DID",
-  "hash": "463bcd43a6ae45a5d9606adfb0c2d968cfacb73e0df827f05a7c7f781a1869c5",
-  "sslPublicKeys": [
-    "MIIGwjCCBaqgAwIBAvd3QuY29tMEkGCCsG....Lz3lGqBrHBklHq7x5WK4dAipTLrG39u",
-    "MIIGwjCCBaqgAwIBAvd3QuY29tMEkGCCsG....Lz3lGqBrHBklHq7x5WK4dAipTLrG40u"
-  ],
-  "country" : "DE"
 }
