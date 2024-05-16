@@ -21,6 +21,8 @@ cd scripts/certgen
 ./gen_all_certs.sh
 ```
 
+Windows plattform you may use gen_all_certs.ps1 instead. Please note that you need to have OpenSSL installed and added to your PATH environment variable.
+
 Note: keep your private keys safe and secure. Do not share them with anyone. 
 
 Copy the generated certificates to the respective folders and change the file names to match the naming convention.
