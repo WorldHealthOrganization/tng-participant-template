@@ -6,18 +6,21 @@ This repository contains the template for building [onboarding](https://github.c
 
 Collect this information and transfer it for each environment:
 
-1) Create an private git repository on github.
-2) Prepare the following information for onboarding request: 
-    - Environment Repository (all private to hide uploader's identity) (DEV, UAT, PROD)
-    - Repository URL
-    - Invite WHO Bot User to Repository (with read rights). The Bot User is:
+1. Create an private git repository on github.
+2. Prepare the following information for onboarding request: 
+    1. Environment Repository (all private to hide uploader's identity) (DEV, UAT, PROD)
+    2. Repository URL
+    3. Invite WHO Bot User to Repository (with read rights). The Bot User is:
         - [tng-bot](https://github.com/tng-bot) for production (PROD)
         -  [tng-bot-dev](https://github.com/tng-bot-dev) for development (DEV) and user acceptance testing (UAT) environments.
-    - Create GPG Keys for responsible persons for each environment (see below)
-3) Fill in content for your country:
+    4. Create GPG Keys for responsible persons for each environment (see below)
+3. Fill in content for your country:
    - for DEV and UAT environments you may use the conf files and the [certgen bash script](scripts/certgen/gen_all_certs.sh) as a guideline (see [README](scripts/certgen/README.md))
 
-4) Send an onboarding/participation request to tng-support@who.int
+4. Send an onboarding/participation request to tng-support@who.int which contains:
+   - URL of the private repository created in Step 1
+   - The GPG key exported in Step 3.iv
+   
 
 # Creating GPG Keys
 
