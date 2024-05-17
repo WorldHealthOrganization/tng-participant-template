@@ -53,7 +53,7 @@ Supported Domains:
 - SHC
 - CRED
 - RACSEL-DDVC
-- IPS
+- IPS-PILGRIMAGE
 
 ## Adding a new trust domain
 

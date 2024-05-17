@@ -21,7 +21,16 @@ cd scripts/certgen
 ./gen_all_certs.sh
 ```
 
-Windows plattform you may use gen_all_certs.ps1 instead. Please note that you need to have OpenSSL installed and added to your PATH environment variable.
+## Execution On Windows
+Windows plattform you can use [gen_all_certs.ps1](gen_all_certs.ps1) instead. 
+Please note that you need to have OpenSSL installed and added to your PATH environment variable.
+Also you may need allow the execution by setting an execution policy
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
+```
+
+# Prepare Folders
 
 Note: keep your private keys safe and secure. Do not share them with anyone. 
 
