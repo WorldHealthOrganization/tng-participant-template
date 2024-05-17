@@ -10,4 +10,4 @@ def test_valid_domain(cert):
 
     domain = cert.pathinfo.get('domain')
     assert domain, 'Certificate at incorrect location'
-    assert domain.upper() in ('DCC','DDCC','DIVOC','ICAO','SHC','CRED','RACSEL-DDVC','IPS'), 'Invalid domain: ' + domain
+    assert domain.upper() in ('DCC','DDCC','DIVOC','ICAO','SHC','CRED','RACSEL-DDVC','IPS-PILGRIMAGE'), 'Invalid domain: ' + domain
