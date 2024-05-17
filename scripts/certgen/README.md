@@ -23,7 +23,7 @@ cd scripts/certgen
 
 ## Execution On Windows
 Windows plattform you can use [gen_all_certs.ps1](gen_all_certs.ps1) instead. 
-Please note that you need to have OpenSSL installed and added to your PATH environment variable.
+Please note that you need to have [OpenSSL installed](https://slproweb.com/products/Win32OpenSSL.html) (e.g. Win64 OpenSSL v3.3.0 Light) and added to your PATH environment variable.
 Also you may need allow the execution by setting an execution policy
 
 ```
