@@ -17,7 +17,7 @@ Collect this information and transfer it for each environment:
 3. Fill in content for your country:
    - for DEV and UAT environments you may use the conf files and the [certgen bash script](scripts/certgen/gen_all_certs.sh) as a guideline according to the [Certificate Preparation](scripts/certgen/README.md)
 
-4. Send an onboarding/participation request to tng-support@who.int which contains:
+4. Send an onboarding/participation request to gdhcn-support@who.int which contains:
    - URL of the private repository created in Step 1
    - The GPG key exported in Step 3.iv
    
