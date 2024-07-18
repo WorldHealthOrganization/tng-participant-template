@@ -3,6 +3,7 @@ from common import load_multipart_pem_file, onboarding_folder_full_path
 from common import _PATHINDEX
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives.asymmetric.dsa import DSAPublicKey
+from cryptography.hazmat.primitives.asymmetric.ec import EllipticCurvePublicKey, ECDSA
 from cryptography.exceptions import InvalidSignature
 from cryptography.hazmat.primitives import hashes
 
@@ -42,6 +43,12 @@ def test_if_tls_resolves(country_folder):
                             cert.x509.signature,
                             cert.x509.tbs_certificate_bytes,
                             cert.x509.signature_hash_algorithm
+                        )
+                    elif isinstance(ca_cert.x509.public_key(), EllipticCurvePublicKey):
+                        ca_cert.x509.public_key().verify(
+                            cert.x509.signature,
+                            cert.x509.tbs_certificate_bytes,
+                            ECDSA(cert.x509.signature_hash_algorithm)
                         )
                     else:
                         ca_cert.x509.public_key().verify(
