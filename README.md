@@ -50,13 +50,8 @@ gpg -k
 Supported Domains:
 
 - DCC
-- DDCC
-- DIVOC
-- ICAO
-- SHC
-- CRED
-- RACSEL-DDVC
 - IPS-PILGRIMAGE
+- PH4H
 
 ## Adding a new trust domain
 
