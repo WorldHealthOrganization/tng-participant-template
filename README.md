@@ -50,13 +50,9 @@ gpg -k
 Supported Domains:
 
 - DCC
-- DDCC
-- DIVOC
-- ICAO
-- SHC
-- CRED
-- RACSEL-DDVC
 - IPS-PILGRIMAGE
+- DICVP
+- PH4H
 
 ## Adding a new trust domain
 
@@ -64,7 +60,7 @@ New trust domains can be established only in agreement between the requesting pa
 Collaborate with the WHO's secretariat to gather comprehensive insights and feedback for the development of the new trust domain.
 
 Once the new trust domain is established create new subdirectory in 'onboarding' subdir that reflect the agreed domain name.
-If you are already onboarded for a domain (e.g. DCC, RACSEL-DDVC etc.) you only need to provide SCA for the the newly added domain.  This can either be an existing SCA or a new SCA.
+If you are already onboarded for a domain (e.g. DCC, IPS-PILGRIMAGE,DICVP,PH4H etc.) you only need to provide SCA for the the newly added domain.  This can either be an existing SCA or a new SCA.
 If the newly added domain is the first one for this participant, UPLOAD, TLS and SCA must be generated.
 
 # Trusted Issuer
