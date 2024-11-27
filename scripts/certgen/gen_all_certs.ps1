@@ -11,7 +11,7 @@ $env:OSSL_STATE_NAME
 $env:OSSL_LOCALITY_NAME
 $env:OSSL_ORGANIZATION_NAME
 $env:OSSL_ORGANIZATIONAL_UNIT_NAME
-$env:OSSL_COMMON_NAME="WHO International" # default entry of the corresponding config file will be used
+$env:OSSL_COMMON_NAME    # default entry of the corresponding config file will be used
 
 # generate a new directory for each run
 $subdir = Get-Date -Format "yyyyMMddHHmmss"
