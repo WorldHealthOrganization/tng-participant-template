@@ -4,6 +4,7 @@ import os
 from cryptography import x509
 from base64 import urlsafe_b64decode
 import json
+import warnings
 from warnings import warn
 
 def requires_readable_cert(func):
@@ -22,18 +23,18 @@ def warn_in_sync_mode(func):
     @functools.wraps(func)
     def wrapper(cert, *args, **kwargs):
         # Step 1: Get SECRETS variable as JSON
-        try:
+        try: 
             secrets = json.loads(os.environ.get('SECRETS'), strict=False)
         except: # Assume secrets is empty if it cannot be loaded
             secrets = {}
 
-
+        
         # Step 2: Check if country of cert has a sync flag that is True
         country = cert.pathinfo.get('country')
         if country in secrets \
-            and _padded_b64_json(secrets.get(country)).get('sync'):
+            and _padded_b64_json(secrets.get(country)).get('sync'): 
                 sync_flag = True
-        else:
+        else: 
                 sync_flag = False
 
         # Step 3: Run the test and catch any exception
@@ -43,23 +44,23 @@ def warn_in_sync_mode(func):
         # Step 4: Test is failed
         #         If sync_flag is True, just raise a warning
         #         else raise the original exception
-        except AssertionError as ae:
-            if sync_flag:
+        except AssertionError as ae: 
+            if sync_flag: 
                 warn(" ".join(ae.args),stacklevel=2)
             else:
                 raise ae
-        except Exception as e:
+        except Exception as e: 
             if sync_flag:
                 warn(f"{e}", source=e)
             else:
                 raise e
     return wrapper
 
-
+      
 
 @functools.lru_cache(maxsize=64)
 def _padded_b64_json(envvalue):
-    '''Corrects the padding of a b64_url encoded string and
+    '''Corrects the padding of a b64_url encoded string and 
         then decodes it. Returns empty dict on error.
     '''
     try:
@@ -92,7 +93,7 @@ def collect_onboarding_files(country_folder, convert_upper=False):
             if long_path[0].lower() == 'onboarding':
                 domain = long_path[1]
                 if domain.startswith('.'):
-                    continue # Allow folders like .git, files like .gitignore, etc. to be
+                    continue # Allow folders like .git, files like .gitignore, etc. to be 
                              # present without being seen as onboarding files
                 if not domain in onboardings:
                     onboardings[domain] = []
@@ -173,3 +174,18 @@ class PemFileWrapper:
         except:
             pass
 
+# Custom warning format function
+def custom_formatwarning(message, category, filename, lineno, line=None):
+    return f"{message}\n"
+
+# Set the custom format function
+warnings.formatwarning = custom_formatwarning
+
+def assert_to_warning(condition, message):
+    if not condition:
+        warn(message)
+
+def read_allowed_domain_from_env():
+    '''Reads the ALLOWED_DOMAINS environment variable and returns a tuple of the domains
+    that are allowed to be present in the onboarding folder.'''
+    return tuple(os.environ.get("ALLOWED_DOMAINS", "").split(", "))
