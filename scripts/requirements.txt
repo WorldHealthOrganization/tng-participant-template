@@ -1,0 +1,7 @@
+gitpython
+pycountry
+pytest
+cryptography
+pytest-md-report
+pytest-html
+requests
