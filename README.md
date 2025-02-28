@@ -8,12 +8,7 @@ The [Concepts Onboarding Checklist](https://smart.who.int/trust/concepts_onboard
 
 # Trust Domains
 
-Supported Domains:
-
-- DCC
-- IPS-PILGRIMAGE
-- DICVP
-- PH4H
+Supported Domains are listed in the [Trust Domain Code System](http://smart.who.int/trust/CodeSystem-WHO.TRUST.DOMAIN.html)
 
 ## Adding a new trust domain
 
