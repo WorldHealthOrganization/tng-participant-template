@@ -28,12 +28,11 @@ openssl enc -base64 -in ${dsc_dir}/DSC_cms.der -e -A > ${dsc_dir}/DSC_cms.b64
 #openssl x509 -in ${subdir}/DSC.pem -noout -fingerprint -sha256 | sed 's/://g' 
 payload=$(cat ${dsc_dir}/DSC_cms.b64)
 
-curl --location 'https://tng-dev.who.int/trustedCertificate' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---data '{"cms": "'"${payload}"'", "properties": {}, "domain": "'"${domain}"'"}' \
+curl --location 'https://tng-dev.who.int/signerCertificate' \
+--header 'Content-Type: application/cms' \
 --key ${subdir}/TLS.key \
 --cert ${subdir}/TLS.pem \
+--data-binary @${dsc_dir}/DSC_cms.b64
 
 #cleanup
 rm ${dsc_dir}/DSC.der
