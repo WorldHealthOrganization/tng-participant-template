@@ -32,7 +32,7 @@ curl --location 'https://tng-dev.who.int/signerCertificate' \
 --header 'Content-Type: application/cms' \
 --key ${subdir}/TLS.key \
 --cert ${subdir}/TLS.pem \
---data-binary @${dsc_dir}/DSC_cms.b64
+--data @${dsc_dir}/DSC_cms.b64
 
 #cleanup
 rm ${dsc_dir}/DSC.der
