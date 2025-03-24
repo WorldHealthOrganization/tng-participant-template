@@ -24,6 +24,7 @@ mkdir -p ${subdir}
 openssl req -x509 -new -days ${DAYS_CA} -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -extensions ext -keyout ${subdir}/SCA.key -nodes -out ${subdir}/SCA.pem -config sca.conf
 openssl req -x509 -new -days ${DAYS_TLS} -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout ${subdir}/TLS.key -nodes -out ${subdir}/TLS.pem -config TLSClient.conf
 openssl req -x509 -new -days ${DAYS_UPLOAD} -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout ${subdir}/UP.key -nodes -out ${subdir}/UP.pem -config uploadCert.conf
+openssl req -x509 -new -days ${DAYS_CA} -newkey ec:<(openssl ecparam -name prime256v1) -extensions ext -keyout ${subdir}/DECA.key -nodes -out ${subdir}/DECA.pem -config DECA.conf
 #special case to only place CA.pem file for self-signed TLS cert as a copy
 cat ${subdir}/TLS.pem > ${subdir}/CA.pem
 

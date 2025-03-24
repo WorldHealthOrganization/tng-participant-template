@@ -4,7 +4,7 @@ Following [Certificate Preperation](https://worldhealthorganization.github.io/sm
 
 Disclaimer: The script generates self-signed certificates not intended to be used on production environments.
 
-You must adapt the configuration file [template.cnf](template.cnf) to your needs:
+You must adapt the configuration file [DN_template.cnf](DN_template.cnf) to your needs:
 
 Then execute the script. It will generate all certificates and keys in a subfolder named by current datetime.
 
@@ -46,9 +46,30 @@ For execution replace \<SUBDIR\> with the path where your SCA.key and SCA.pem re
 Optionally the purpose of the DSC can be provided with the third parameter. When this is omitted,
 then the DSCs will be suitable for test, vaccination and recovery.
 ```
-gen_dsc.sh template.cnf <SUBDIR> [test|vax|rec]
+gen_dsc.sh DN_template.cnf <SUBDIR> [test|vax|rec]
 ```
+
+# Generate DESCs
+After onboarding you probably want to generate and upload your DESCs.
+DESC Genration can be performed with the [gen_DESC.sh](gen_DESC.sh) script.
+For execution replace \<SUBDIR\> with the path where your DECA.key and DECA.pem reside.
+```
+gen_DESC.sh DN_template.cnf <SUBDIR>
+```
+
 # Upload DSCs
 For uploading DSCs they must be packend into an CMS and be signed with the Upload Certificate of their issuer.
 The resulting output must be base64 encoded and put in the payload of a POST request to the TNG.
 A script [upload_dsc.sh](upload_dsc.sh) performs these tasks and may be tailored to your needs.
+
+# Upload DESCs
+For uploading DSCs they must be packend into an CMS and be signed with the Upload Certificate of their issuer.
+The resulting output must be base64 encoded and put in the payload of a POST request to the TNG.
+A script [upload_DESC.sh](upload_DESC.sh) performs these tasks and may be tailored to your needs.
+SUBDIR must contain the UP key and pem for upload. 
+As second parameter, the folder that contains DESC must be provided.
+You may also provide additional parameter for a domain to be targeted with the upload.
+
+```
+upload_dsc.sh <SUBDIR> <DESC_FOLDER> <DOMAIN>
+```
