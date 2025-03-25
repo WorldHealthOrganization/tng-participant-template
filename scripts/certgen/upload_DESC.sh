@@ -22,6 +22,8 @@ fi
 subdir=$1
 desc_dir=$2
 
+GROUP_DESC="DESC"
+
 openssl x509 -outform der -in ${desc_dir}/DESC.pem -out ${desc_dir}/DESC.der
 openssl cms -sign -nodetach -in ${desc_dir}/DESC.der -signer ${subdir}/UP.pem -inkey ${subdir}/UP.key -out ${desc_dir}/DESC_cms.der -outform DER -binary
 openssl enc -base64 -in ${desc_dir}/DESC_cms.der -e -A > ${desc_dir}/DESC_cms.b64
@@ -31,7 +33,7 @@ payload=$(cat ${desc_dir}/DESC_cms.b64)
 curl --location 'https://tng-dev.who.int/trustedCertificate' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---data '{"cms": "'"${payload}"'", "properties": {}, "domain": "'"${domain}"'"}' \
+--data '{"cms": "'"${payload}"'", "properties": {}, "domain": "'"${domain}"'", "group": "'"${GROUP_DESC}"'"}' \
 --key ${subdir}/TLS.key \
 --cert ${subdir}/TLS.pem \
 
