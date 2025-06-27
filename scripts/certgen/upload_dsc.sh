@@ -21,7 +21,7 @@ fi
 
 subdir=$1
 dsc_dir=$2
-
+GROUP_DSC="DSC"
 openssl x509 -outform der -in ${dsc_dir}/DSC.pem -out ${dsc_dir}/DSC.der
 openssl cms -sign -nodetach -in ${dsc_dir}/DSC.der -signer ${subdir}/UP.pem -inkey ${subdir}/UP.key -out ${dsc_dir}/DSC_cms.der -outform DER -binary
 openssl enc -base64 -in ${dsc_dir}/DSC_cms.der -e -A > ${dsc_dir}/DSC_cms.b64
@@ -31,12 +31,12 @@ payload=$(cat ${dsc_dir}/DSC_cms.b64)
 curl --location 'https://tng-dev.who.int/trustedCertificate' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---data '{"cms": "'"${payload}"'", "properties": {}, "domain": "'"${domain}"'"}' \
+--data '{"cms": "'"${payload}"'", "properties": {}, "domain": "'"${domain}"'"}, "group": "'"${GROUP_DSC}"'"}' \
 --key ${subdir}/TLS.key \
 --cert ${subdir}/TLS.pem \
 
 #cleanup
 rm ${dsc_dir}/DSC.der
 rm ${dsc_dir}/DSC_cms.der
-rm ${dsc_dir}/DSC_cms.b64
+#rm ${dsc_dir}/DSC_cms.b64
 
