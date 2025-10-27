@@ -40,5 +40,5 @@ curl --location 'https://tng-dev.who.int/trustedCertificate' \
 #cleanup
 rm ${desc_dir}/DESC.der
 rm ${desc_dir}/DESC_cms.der
-rm ${desc_dir}/DESC_cms.b64
+#rm ${desc_dir}/DESC_cms.b64
 
