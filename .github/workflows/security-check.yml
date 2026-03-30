@@ -1,0 +1,40 @@
+name: Security Check
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  check-secrets:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Check for private keys
+      run: |
+        # Check for private key patterns in the entire repository
+        if find . -name "*.key" -o -name "*.pem" -o -name "*private*" | grep -v ".git" | head -1; then
+          echo "❌ Private key files found!"
+          find . -name "*.key" -o -name "*.pem" -o -name "*private*" | grep -v ".git"
+          exit 1
+        fi
+
+        # Check file contents for private key headers
+        if grep -r "BEGIN.*PRIVATE KEY" . --exclude-dir=.git --exclude="*.yml" --exclude="*.yaml"; then
+          echo "❌ Private key content found!"
+          exit 1
+        fi
+
+        echo "✅ No private keys detected"
+
+    - name: Check for secrets with TruffleHog
+      uses: trufflesecurity/trufflehog@v3.94.1
+      with:
+        path: ./
+        base: main
+        head: HEAD
+        extra_args: --debug --only-verified
