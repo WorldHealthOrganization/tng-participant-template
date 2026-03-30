@@ -53,4 +53,17 @@ temp
 # ignore private keys and openssl conf
 *.key
 *.conf
-*.DS_Store
+
+# Apple pollution
+.DS_Store
+
+# GPG keys and related
+*.gpg
+*.asc
+*.pgp
+*.kbx
+*.sig
+gpg_key_*.txt
+secring.gpg
+pubring.gpg
+trustdb.gpg
