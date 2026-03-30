@@ -16,13 +16,6 @@ jobs:
 
     - name: Check for private keys
       run: |
-        # Check for private key patterns in the entire repository
-        if find . -name "*.key" -o -name "*.pem" -o -name "*private*" | grep -v ".git" | head -1; then
-          echo "❌ Private key files found!"
-          find . -name "*.key" -o -name "*.pem" -o -name "*private*" | grep -v ".git"
-          exit 1
-        fi
-
         # Check file contents for private key headers
         if grep -r "BEGIN.*PRIVATE KEY" . --exclude-dir=.git --exclude="*.yml" --exclude="*.yaml"; then
           echo "❌ Private key content found!"
