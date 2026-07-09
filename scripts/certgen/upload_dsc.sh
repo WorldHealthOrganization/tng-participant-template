@@ -38,5 +38,5 @@ curl --location 'https://tng-dev.who.int/trustedCertificate' \
 #cleanup
 rm ${dsc_dir}/DSC.der
 rm ${dsc_dir}/DSC_cms.der
-rm ${dsc_dir}/DSC_cms.b64
+#rm ${dsc_dir}/DSC_cms.b64
 

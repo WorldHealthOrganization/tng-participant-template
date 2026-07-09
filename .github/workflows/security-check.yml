@@ -1,0 +1,33 @@
+name: Security Check
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  check-secrets:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Check for private keys
+      run: |
+        # Check file contents for private key headers
+        if grep -r "BEGIN.*PRIVATE KEY" . --exclude-dir=.git --exclude="*.yml" --exclude="*.yaml"; then
+          echo "❌ Private key content found!"
+          exit 1
+        fi
+
+        echo "✅ No private keys detected"
+
+    - name: Check for secrets with TruffleHog
+      uses: trufflesecurity/trufflehog@586f66d7886cd0b037c7c245d4a6e34ef357ab10 #v3.94.1
+      with:
+        path: ./
+        base: main
+        head: HEAD
+        extra_args: --debug --only-verified
